@@ -15,7 +15,7 @@ CREATE TABLE Usuario (
     Ciudad VARCHAR(50),
     Provincia VARCHAR(50),
     Pais VARCHAR(50),
-    IBAN VARCHAR(20) UNIQUE
+    Contrasenya VARCHAR(20) UNIQUE
 );
 
 -- Crear la tabla Cuenta

@@ -27,7 +27,45 @@
     <!-- place navbar here -->
   </header>
   <main>
-  
+  <form action="modelo.php" method="post">
+        <label for="campo1">DNI:</label>
+        <input type="text" id="campo1" name="campo1" required>
+
+        <label for="campo2">Nombre:</label>
+        <input type="text" id="campo2" name="campo2" required>
+
+        <label for="campo3">Apellidos:</label>
+        <input type="text" id="campo3" name="campo3" required>
+
+        <label for="campo4">Email:</label>
+        <input type="text" id="campo4" name="campo4" required>
+
+        <label for="campo5">Fecha de nacimiento:</label>
+        <input type="text" id="campo5" name="campo5" required>
+
+        <label for="campo6">Foto:</label>
+        <input type="text" id="campo6" name="campo6" required>
+
+        <label for="campo7">Dirección:</label>
+        <input type="text" id="campo7" name="campo7" required>
+
+        <label for="campo8">Codigo postal:</label>
+        <input type="text" id="campo8" name="campo8" required>
+
+        <label for="campo9">Ciudad:</label>
+        <input type="text" id="campo9" name="campo9" required>
+
+        <label for="campo10">Provincia:</label>
+        <input type="text" id="campo10" name="campo10" required>
+
+        <label for="campo11">País:</label>
+        <input type="text" id="campo11" name="campo11" required>
+
+        <label for="campo12">Contraseña:</label>
+        <input type="text" id="campo12" name="campo12">
+
+        <input type="submit" value="Enviar">
+    </form>
 
   </main>
   <footer>

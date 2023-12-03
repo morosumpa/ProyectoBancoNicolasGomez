@@ -27,7 +27,15 @@
     <!-- place navbar here -->
   </header>
   <main>
-  
+  <form action="modelo.php" method="post">
+  <label for="campo1">DNI:</label>
+        <input type="text" id="campo1" name="campo1" required>
+
+        <label for="campo2">Contraseña 2:</label>
+        <input type="text" id="campo2" name="campo2" required>
+
+        <input type="submit" value="Enviar">
+    </form>
 
   </main>
   <footer>
