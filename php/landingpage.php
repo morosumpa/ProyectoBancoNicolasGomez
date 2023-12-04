@@ -106,9 +106,15 @@ if (!isset($_SESSION['Nombre'])) {
 
 
   </main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Copyright -->
+  <div class="text-center p-4">
+    <p>DisBank@Copyright</p>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 
 
 </body>
