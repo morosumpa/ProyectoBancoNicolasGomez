@@ -15,7 +15,7 @@ CREATE TABLE Usuario (
     Ciudad VARCHAR(50),
     Provincia VARCHAR(50),
     Pais VARCHAR(50),
-    Contrasenya VARCHAR(20) UNIQUE
+    Contrasenya VARCHAR(20) 
 );
 
 -- Crear la tabla Cuenta
@@ -24,7 +24,7 @@ CREATE TABLE Cuenta (
     Saldo DECIMAL(10,2),
     Tipo_cuenta VARCHAR(20),
     Estado_cuenta VARCHAR(20),
-    FOREIGN KEY (IBAN) REFERENCES Usuario(IBAN)
+   
 );
 
 -- Crear la tabla Transferencias

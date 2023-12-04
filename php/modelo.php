@@ -1,17 +1,21 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $campo1 = $_POST["campo1"];
-    $campo2 = $_POST["campo2"];
-    $campo3 = $_POST["campo3"];
-    $campo4 = $_POST["campo4"];
-    $campo5 = $_POST["campo5"];
-    $campo6 = $_POST["campo6"];
-    $campo7 = $_POST["campo7"];
-    $campo8 = $_POST["campo8"];
-    $campo9 = $_POST["campo9"];
-    $campo10 = $_POST["campo10"];
-    $campo11 = $_POST["campo11"];
-    $campo12 = $_POST["campo12"];
+    $DNI = $_POST["campo1"];
+    $Nombre = $_POST["campo2"];
+    $Apellidos = $_POST["campo3"];
+    $Email = $_POST["campo4"];
+    $Fecha_nac = $_POST["campo5"];
+    $Foto = $_POST["campo6"];
+    $Direccion = $_POST["campo7"];
+    $Codigo_postal = $_POST["campo8"];
+    $Ciudad = $_POST["campo9"];
+    $Provincia = $_POST["campo10"];
+    $Pais = $_POST["campo11"];
+    $Contrasenya = $_POST["campo12"];
+
+    
+    // Hash de la contraseña
+    $hashed_password = password_hash($Contrasenya, PASSWORD_DEFAULT);
 
     // Configuración de la conexión a la base de datos
     $servername = "localhost";
@@ -28,14 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Preparar la consulta SQL para insertar datos en la tabla Usuario
-    $sql = "INSERT INTO Usuario (DNI, Nombre, Apellidos, Email, Fecha_nac, Foto, Direccion, Codigo_postal, Ciudad, Provincia, Pais, Contrasenya) VALUES ('$campo1', '$campo2', '$campo3', '$campo4', '$campo5', '$campo6', '$campo7', '$campo8', '$campo9', '$campo10', '$campo11', '$campo12')";
+    $sql = "INSERT INTO Usuario (DNI, Nombre, Apellidos, Email, Fecha_nac, Foto, Direccion, Codigo_postal, Ciudad, Provincia, Pais, Contrasenya) VALUES ('$DNI', '$Nombre', '$Apellidos', '$Email', '$Fecha_nac', '$Foto', '$Direccion', '$Codigo_postal', '$Ciudad', '$Provincia', '$Pais', '$Contrasenya')";
 
     // Ejecutar la consulta
     if ($conn->query($sql) === TRUE) {
         echo "Datos almacenados correctamente en la base de datos.";
 
         // Consultar los datos recién insertados
-        $sql_select = "SELECT * FROM Usuario WHERE DNI = '$campo1'";
+        $sql_select = "SELECT * FROM Usuario WHERE DNI = '$DNI'";
         $result = $conn->query($sql_select);
 
         // Verificar si la consulta SELECT fue exitosa
@@ -71,8 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Cerrar la conexión
     $conn->close();
 } else {
-    // Si alguien intenta acceder directamente a procesar.php, puedes redirigirlo a la página del formulario
-    header("Location: index.html");
+    // Si alguien intenta acceder directamente a iniciar_sesion.php, puedes redirigirlo a la página del formulario
+    header("Location: registro.php");
     exit();
 }
 ?>

@@ -1,7 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $DNI = $_POST["campo1"];
-    $Contrasenya = $_POST["campo12"];
+    // Trim de contraseña para evitar espacios indeseados
+    $Contrasenya = trim($_POST["campo12"]);
 
     // Configuración de la conexión a la base de datos
     $servername = "localhost";
@@ -17,18 +18,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Consulta SQL para obtener la contraseña almacenada
-    $sql = "SELECT * FROM Usuario WHERE DNI = '$DNI'";
+    echo "Conexión a la base de datos exitosa.<br>";
+
+    // Consulta SQL para obtener la contraseña
+    $sql = "SELECT Contrasenya FROM Usuario WHERE DNI = '$DNI'";
     $result = $conn->query($sql);
 
     if ($result !== FALSE && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $stored_password = $row["Contrasenya"]; // Ajusta el nombre de la columna según tu esquema
+        $stored_password = $row["Contrasenya"];
+        echo "Contraseña almacenada: " . $stored_password . "<br>";
 
         // Verificar si la contraseña coincide
-        if (password_verify($Contrasenya, $stored_password)) {
+        if ($Contrasenya === $stored_password) {
             // La contraseña es correcta, puedes redirigir al usuario a su área personal o hacer otras acciones
-            echo "Inicio de sesión exitoso.";
+            echo "Inicio de sesión exitoso."; 
+            header("Location: landingpage.php");
+    exit();
         } else {
             echo "Contraseña incorrecta.";
         }
@@ -38,9 +44,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Cerrar la conexión
     $conn->close();
-} else {
-    // Si alguien intenta acceder directamente a autenticar.php, puedes redirigirlo a la página de inicio de sesión
-    header("Location: iniciar_sesion.php");
-    exit();
-}
+} 
 ?>
