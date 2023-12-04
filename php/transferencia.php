@@ -23,11 +23,63 @@
 </head>
 
 <body>
-  <header>
-    <!-- place navbar here -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Transferencias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Prestamos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Cambio moneda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Chat</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
   </header>
   <main>
-  
+  <div class="container">
+  <div class="row row-cols-1 ">
+    <div class="col-12">
+        <p>Añadir sueldo, ingresos o gastos</p>
+        <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
+        <p>Seleccione el tipo de movimiento y la cantida que desee mover.</p>
+
+        <form action="enviar_transferencia.php" method="post">
+        <label for="movimiento">Tipo de movimiento:</label>
+        <input type="text" id="movimiento" name="movimiento" required>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" id="cantidad" name="cantidad" required>
+
+        <input type="submit" value="Enviar">
+    </form>
+    </div>
+</div>
+</div>
+
 
   </main>
   <footer>

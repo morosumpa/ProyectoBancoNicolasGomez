@@ -4,40 +4,34 @@ USE DisBank;
 
 -- Crear la tabla Usuario
 CREATE TABLE Usuario (
-    DNI VARCHAR(10) PRIMARY KEY,
-    Nombre VARCHAR(50),
-    Apellidos VARCHAR(50),
-    Email VARCHAR(100),
+    DNI VARCHAR(255) PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Apellidos VARCHAR(255),
+    Email VARCHAR(255),
     Fecha_nac DATE,
     Foto VARCHAR(255),
-    Direccion VARCHAR(100),
-    Codigo_postal VARCHAR(10),
-    Ciudad VARCHAR(50),
-    Provincia VARCHAR(50),
-    Pais VARCHAR(50),
-    Contrasenya VARCHAR(20) 
+    Direccion VARCHAR(255),
+    Codigo_postal VARCHAR(255),
+    Ciudad VARCHAR(255),
+    Provincia VARCHAR(255),
+    Pais VARCHAR(255),
+    Contrasenya VARCHAR(255)
 );
 
 -- Crear la tabla Cuenta
 CREATE TABLE Cuenta (
     IBAN VARCHAR(20) PRIMARY KEY,
     Saldo DECIMAL(10,2),
-    Tipo_cuenta VARCHAR(20),
-    Estado_cuenta VARCHAR(20),
+    Tipo_cuenta VARCHAR(255),
+    Estado_cuenta VARCHAR(255)
    
 );
 
--- Crear la tabla Transferencias
-CREATE TABLE Transferencias (
-    ID_transferencia INT PRIMARY KEY,
-    Monto DECIMAL(10,2),
-    Fecha_hora TIMESTAMP,
-    Estado_transferencia VARCHAR(20),
-    Comentarios TEXT,
-    Cuenta_origen VARCHAR(20),
-    Cuenta_destino VARCHAR(20),
-    FOREIGN KEY (Cuenta_origen) REFERENCES Cuenta(IBAN),
-    FOREIGN KEY (Cuenta_destino) REFERENCES Cuenta(IBAN)
+-- Crear la tabla Movimientos
+CREATE TABLE Movimientos (
+    ID_movimiento INT PRIMARY KEY,
+    Cantidad DECIMAL(10,2),
+    Tipo_movimiento VARCHAR(255)
 );
 
 -- Crear la tabla Chat
@@ -45,7 +39,7 @@ CREATE TABLE Chat (
     ID_mensaje INT PRIMARY KEY,
     Mensajes TEXT,
     Fecha_hora TIMESTAMP,
-    Estado_mensaje VARCHAR(20),
+    Estado_mensaje VARCHAR(255),
     DNI_1 VARCHAR(10),
     DNI_2 VARCHAR(10),
     FOREIGN KEY (DNI_1) REFERENCES Usuario(DNI),

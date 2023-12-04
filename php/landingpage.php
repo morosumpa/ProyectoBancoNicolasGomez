@@ -80,7 +80,7 @@ if (!isset($_SESSION['Nombre'])) {
   <div class="row row-cols-2">
     <div class="col">
         <a href="transferencia.php"> 
-            Transferencias
+        ingresos o gastos
             <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
         </a>
     </div>
