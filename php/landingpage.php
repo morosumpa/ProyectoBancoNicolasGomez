@@ -48,21 +48,19 @@ if (!isset($_SESSION['Nombre'])) {
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <a class="nav-link active" aria-current="page" href="#">Perfil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link active" aria-current="page" href="#">Transferencias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Prestamos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Cambio moneda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Chat</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -80,12 +78,32 @@ if (!isset($_SESSION['Nombre'])) {
   echo $_SESSION['bienvenida_message'];
   ?>
   <div class="row row-cols-2">
-    <div class="col">Transferencias</div>
-    <div class="col">Prestamos</div>
-    <div class="col">Cambio moneda</div>
-    <div class="col">Chat</div>
-  </div>
+    <div class="col">
+        <a href="transferencia.php"> 
+            Transferencias
+            <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
+        </a>
+    </div>
+    <div class="col">
+        <a href="prestamos.php"> 
+            Prestamos
+            <img src="../img/iconprestamo.png" class="img-fluid rounded-top" alt="">
+        </a>
+    </div>
+    <div class="col">
+        <a href="cambio_moneeda.php"> 
+            Cambio moneda
+            <img src="../img/iconmoneda.png" class="img-fluid rounded-top" alt="">
+        </a>
+    </div>
+    <div class="col">
+        <a href="chat.php">
+            Chat
+            <img src="../img/iconchat.png" class="img-fluid rounded-top" alt="">
+        </a>
+    </div>
 </div>
+
 
   </main>
   <footer>
