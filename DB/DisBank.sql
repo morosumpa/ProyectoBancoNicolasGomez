@@ -88,3 +88,9 @@ CREATE TABLE Prestamos (
     Estado VARCHAR(20),
     FOREIGN KEY (DNI_usuario) REFERENCES Usuario(DNI)
 );
+
+ALTER TABLE Movimientos
+MODIFY COLUMN ID_movimiento INT AUTO_INCREMENT;
+
+
+SELECT * FROM Usuario;
