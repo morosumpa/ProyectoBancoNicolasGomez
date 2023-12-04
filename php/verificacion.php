@@ -18,23 +18,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    echo "Conexión a la base de datos exitosa.<br>";
-
-    // Consulta SQL para obtener la contraseña
-    $sql = "SELECT Contrasenya FROM Usuario WHERE DNI = '$DNI'";
+    // Consulta SQL para obtener la contraseña y el nombre de usuario
+    $sql = "SELECT Contrasenya, Nombre FROM Usuario WHERE DNI = '$DNI'";
     $result = $conn->query($sql);
 
     if ($result !== FALSE && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $stored_password = $row["Contrasenya"];
-        echo "Contraseña almacenada: " . $stored_password . "<br>";
+        $nombre_de_usuario = $row["Nombre"];
 
         // Verificar si la contraseña coincide
         if ($Contrasenya === $stored_password) {
-            // La contraseña es correcta, puedes redirigir al usuario a su área personal o hacer otras acciones
-            echo "Inicio de sesión exitoso."; 
+            // Inicio de sesión exitoso
+            session_start();
+            $_SESSION['Nombre'] = $nombre_de_usuario;
+            $_SESSION['bienvenida_message'] = "Bienvenido, " . $nombre_de_usuario . ". Hoy es " . date('d \d\e F \d\e Y') . ". ¿Qué realizarás hoy?";
             header("Location: landingpage.php");
-    exit();
+            exit();
         } else {
             echo "Contraseña incorrecta.";
         }
@@ -44,5 +44,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Cerrar la conexión
     $conn->close();
-} 
+}
 ?>
