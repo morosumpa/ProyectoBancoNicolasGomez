@@ -18,7 +18,7 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <link rel="stylesheet" href="../sass/css/style.css">
+<link rel="stylesheet" href="../sass/css/style.css">
   <script defer src="../assets/js/web.js"></script>
 </head>
 
@@ -27,7 +27,7 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <form action="modelo.php" method="post">
+  <form action="../pantalla_back/modelo.php" method="post">
         <label for="campo1">DNI:</label>
         <input type="text" id="campo1" name="campo1" required>
 

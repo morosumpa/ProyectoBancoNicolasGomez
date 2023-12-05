@@ -30,7 +30,7 @@ if (!isset($_SESSION['Nombre'])) {
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <link rel="stylesheet" href="../sass/css/style.css">
+<link rel="stylesheet" href="../sass/css/style.css">
   <script defer src="../assets/js/web.js"></script>
 </head>
 
@@ -91,7 +91,7 @@ if (!isset($_SESSION['Nombre'])) {
         </a>
     </div>
     <div class="col">
-        <a href="cambio_moneeda.php"> 
+        <a href="cambio_moneda.php"> 
             Cambio moneda
             <img src="../img/iconmoneda.png" class="img-fluid rounded-top" alt="">
         </a>

@@ -18,7 +18,7 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <link rel="stylesheet" href="../sass/css/style.css">
+<link rel="stylesheet" href="../sass/css/style.css">
   <script defer src="../assets/js/web.js"></script>
 </head>
 
@@ -67,7 +67,7 @@
         <img src="../img/iconprestamo.png" class="img-fluid rounded-top" alt="">
         <p>Introduzca el motivo por el que esta pidiendo un préstamo y la cantidad de este.</p>
 
-        <form action="enviar_prestamo.php" method="post">
+        <form action="../pantalla_back/enviar_prestamo.php" method="post">
         <label for="descripcion">Descripción:</label>
         <input type="text" id="descripcion" name="descripcion" required>
 

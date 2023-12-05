@@ -18,7 +18,7 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <link rel="stylesheet" href="../sass/css/style.css">
+<link rel="stylesheet" href="../sass/css/style.css">
   <script defer src="../assets/js/web.js"></script>
 </head>
 
@@ -60,7 +60,48 @@
 </nav>
   </header>
   <main>
-  
+  <main>
+  <div class="container">
+  <div class="col-12">
+        <p>Cambio de moneda</p>
+        <img src="../img/iconmoneda.png" class="img-fluid rounded-top" alt="">
+        <p>Escoja la moneda deseada a cambiar de su capital</p>
+</div>
+  <div class="row row-cols-3">
+    <div class="col">
+        ingresos o gastos
+        <img src="../img/iconeuro.png" class="img-fluid rounded-top" alt="">
+    </div>
+    <div class="col">
+       
+    </div>
+    <div class="col">
+            Prestamos
+            <img src="../img/icondolar.png" class="img-fluid rounded-top" alt="">
+    </div>
+    <div class="col">
+       
+    </div>
+    <div class="col">
+            Cambio moneda
+            <img src="../img/iconrublo.png" class="img-fluid rounded-top" alt="">
+    </div>
+    <div class="col">
+       
+    </div>
+    <div class="col">
+            Chat
+            <img src="../img/iconyen.png" class="img-fluid rounded-top" alt="">
+    </div>
+    <div class="col">
+       
+    </div>
+    <div class="col">
+            Chat
+            <img src="../img/iconlibra.png" class="img-fluid rounded-top" alt="">
+    </div>
+</div>
+
 
   </main>
    <!-- Footer -->
