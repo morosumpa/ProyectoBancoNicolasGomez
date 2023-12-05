@@ -99,8 +99,3 @@ CREATE TABLE Prestamos (
 ALTER TABLE Movimientos
 ADD COLUMN DNI_usuario VARCHAR(10),
 ADD FOREIGN KEY (DNI_usuario) REFERENCES Usuario(DNI);
-
-
-
-
-SELECT * FROM Usuario;
