@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $DNI = $_POST["campo1"];
     $Nombre = $_POST["campo2"];
@@ -37,6 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ejecutar la consulta
     if ($conn->query($sql) === TRUE) {
         echo "Datos almacenados correctamente en la base de datos.";
+        // Guardar el DNI en la sesión
+    $_SESSION['DNI'] = $DNI;
+
 
         // Consultar los datos recién insertados
         $sql_select = "SELECT * FROM Usuario WHERE DNI = '$DNI'";

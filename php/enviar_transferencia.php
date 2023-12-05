@@ -1,7 +1,14 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+session_start();
+
+include('generarIban.php');
+
+var_dump($_SESSION);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
+    $DNI_usuario = $_SESSION['DNI'];
     $cantidad = trim($_POST["cantidad"]);
-    $movimientos = isset($_POST["movimiento"]) ? $_POST["movimiento"] : "";
+    $movimiento = isset($_POST["movimiento"]) ? $_POST["movimiento"] : "";
 
     $servername = "localhost";
     $username = "root";
@@ -14,33 +21,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Verificar que $movimientos no está vacío antes de intentar procesarlo
-    if (!empty($movimientos)) {
-        //Esta función divide una cadena en un array de cadenas
-        $movimientos = explode(",", $movimientos);
+    $cantidadFloat = floatval($cantidad);
 
-        foreach ($movimientos as $movimiento) {
-            $movimiento = trim($movimiento);
-            $cantidadFloat = floatval($cantidad);
+    if ($movimiento === "ingreso" || $movimiento === "gasto") {
+        $sql_get_iban = "SELECT IBAN FROM Cuenta WHERE ID_usuario = ?";
+        $stmt_get_iban = $conn->prepare($sql_get_iban);
+        $stmt_get_iban->bind_param("i", $DNI_usuario);
+        $stmt_get_iban->execute();
+        $result_get_iban = $stmt_get_iban->get_result();
+        
+        if ($row = $result_get_iban->fetch_assoc()) {
+            $iban = $row['IBAN'];
 
-            $sql = "INSERT INTO Movimientos (Cantidad, Tipo_movimiento) VALUES (?, ?)";
-            //Esta funcion prepara una sentencia SQL para su ejecución y devuelve un objeto de declaración asociado con esa sentencia.
-            $stmt = $conn->prepare($sql);
-            //Esta función es utilizada en PHP para vincular parámetros a una sentencia SQL preparada. 
-            $stmt->bind_param("ds", $cantidadFloat, $movimiento);
+            // Resto del código para procesar la transferencia
+            // ...
 
-            //Esta función se utiliza para ejecutar la sentencia preparada con los parámetros vinculados.
-            if ($stmt->execute()) {
-                echo "Datos insertados correctamente para $movimiento<br>";
-            } else {
-                echo "Error al insertar datos para $movimiento: " . $stmt->error . "<br>";
-            }
-
-            $stmt->close();
+        } else {
+            echo "Error al obtener el IBAN del usuario.<br>";
         }
+
+        $stmt_get_iban->close();
     } else {
-        echo "No se proporcionaron movimientos.";
+        echo "Tipo de movimiento no válido.";
     }
 
     $conn->close();
+} else {
+    header("Location: inicio_sesion.php");
+    exit();
 }
+?>

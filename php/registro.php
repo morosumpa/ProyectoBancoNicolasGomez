@@ -27,7 +27,7 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <form action="../pantalla_back/modelo.php" method="post">
+  <form action="modelo.php" method="post">
         <label for="campo1">DNI:</label>
         <input type="text" id="campo1" name="campo1" required>
 
