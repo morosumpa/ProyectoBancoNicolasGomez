@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Datos almacenados correctamente en la base de datos.";
         // Guardar el DNI en la sesión
     $_SESSION['DNI'] = $DNI;
-
+    header("Location: inicio_sesion.php");
 
         // Consultar los datos recién insertados
         $sql_select = "SELECT * FROM Usuario WHERE DNI = '$DNI'";

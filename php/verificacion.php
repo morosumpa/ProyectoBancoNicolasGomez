@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['DNI'] = $row["DNI"];
             $_SESSION['Nombre'] = $nombre_de_usuario;
             $_SESSION['bienvenida_message'] = "Bienvenido, " . $nombre_de_usuario . ". Hoy es " . date('d \d\e F \d\e Y') . ". ¿Qué realizarás hoy?";
-            header("Location: landingpage.php");
+            header("Location: registro_cuenta.php");
             exit();
         } else {
             echo "Contraseña incorrecta.";

@@ -17,7 +17,7 @@
         <label for="tipo_cuenta">Tipo de Cuenta:</label>
         <select name="tipo_cuenta" required>
             <option value="CuentaCorriente">Cuenta Corriente</option>
-            <!-- Puedes agregar más opciones según tus necesidades -->
+            <option value="CuentaAhorro">Cuenta ahorro</option>
         </select>
 
         <br>

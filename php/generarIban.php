@@ -52,8 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Resto del código...
-
     // Verificar si ya tiene una cuenta
     $sql_check_cuenta = "SELECT ID FROM Cuenta WHERE ID_usuario = ?";
     $stmt_check_cuenta = $conn->prepare($sql_check_cuenta);

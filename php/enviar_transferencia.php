@@ -33,8 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
         if ($row = $result_get_iban->fetch_assoc()) {
             $iban = $row['IBAN'];
 
-            // Resto del código para procesar la transferencia
-            // ...
 
         } else {
             echo "Error al obtener el IBAN del usuario.<br>";
