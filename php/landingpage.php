@@ -48,19 +48,22 @@ if (!isset($_SESSION['Nombre'])) {
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+          <a class="nav-link active" aria-current="page" href="perfil.php">Perfil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Transferencias</a>
+          <a class="nav-link active" aria-current="page" href="transferencia.php">Transferencias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Prestamos</a>
+          <a class="nav-link active" aria-current="page" href="prestamo.php">Prestamos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Cambio moneda</a>
+          <a class="nav-link active" aria-current="page" href="cambio_moneda.php">Cambio moneda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Chat</a>
+          <a class="nav-link active" aria-current="page" href="registro_cuenta.php">Registro de cuenta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="chat.php">Chat</a>
         </li>
       </ul>
       <form class="d-flex">
