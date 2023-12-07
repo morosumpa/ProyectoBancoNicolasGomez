@@ -1,5 +1,6 @@
+-- Crear la base de datos
 DROP DATABASE IF EXISTS DisBank;
-CREATE DATABASE DisBanK;
+CREATE DATABASE DisBank;
 USE DisBank;
 
 -- Tabla Usuario
@@ -41,6 +42,7 @@ CREATE TABLE Movimientos (
     FOREIGN KEY (IBAN) REFERENCES Cuenta(IBAN),
     FOREIGN KEY (ID_usuario) REFERENCES Usuario(ID)
 );
+
 -- Tabla Chat
 CREATE TABLE Chat (
     ID_mensaje INT PRIMARY KEY AUTO_INCREMENT,
@@ -95,7 +97,30 @@ CREATE TABLE Prestamos (
     Estado VARCHAR(20),
     FOREIGN KEY (ID_usuario) REFERENCES Usuario(ID)
 );
+
+-- Tabla CambioMoneda
+CREATE TABLE CambioMoneda (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    IBAN_origen VARCHAR(20),
+    Moneda_origen VARCHAR(255),
+    Moneda_destino VARCHAR(255),
+    Monto_origen DECIMAL(10,2),
+    Monto_destino DECIMAL(10,2),
+    Tasa_cambio DECIMAL(10,2),
+    Fecha_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (IBAN_origen) REFERENCES Cuenta(IBAN)
+);
 -- Modificar la tabla Movimientos
 ALTER TABLE Movimientos
 ADD COLUMN DNI_usuario VARCHAR(10),
 ADD FOREIGN KEY (DNI_usuario) REFERENCES Usuario(DNI);
+select * from usuario;
+select * from cuenta;
+
+select * from Prestamos;
+select * from Registro;
+select * from Login;
+select * from Movimientos;
+select * from CambioMoneda;
+
+
