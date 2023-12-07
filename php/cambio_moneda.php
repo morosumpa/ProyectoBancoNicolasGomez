@@ -69,41 +69,33 @@
         <img src="../img/iconmoneda.png" class="img-fluid rounded-top" alt="">
         <p>Escoja la moneda deseada a cambiar de su capital</p>
 </div>
-  <div class="row row-cols-3">
-    <div class="col">
-        ingresos o gastos
-        <img src="../img/iconeuro.png" class="img-fluid rounded-top" alt="">
+  <div class="row row-cols-1">
+     <!-- Formulario de cambio de moneda -->
+     <form action="generarMoneda.php" method="post">
+    <div class="mb-3">
+        <label for="monedaOrigen" class="form-label">Selecciona la moneda de origen:</label>
+        <select class="form-select" name="monedaOrigen" id="monedaOrigen" required>
+            <option value="euro" data-tasa-cambio="1">Euro</option>
+            <option value="dolar" data-tasa-cambio="1.1">Dólar</option>
+            <option value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
+            <option value="yen" data-tasa-cambio="160">Yen Japonés</option>
+            <option value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
+        </select>
     </div>
-    <div class="col">
-       
-    </div>
-    <div class="col">
-            Prestamos
-            <img src="../img/icondolar.png" class="img-fluid rounded-top" alt="">
-    </div>
-    <div class="col">
-       
-    </div>
-    <div class="col">
-            Cambio moneda
-            <img src="../img/iconrublo.png" class="img-fluid rounded-top" alt="">
-    </div>
-    <div class="col">
-       
-    </div>
-    <div class="col">
-            Chat
-            <img src="../img/iconyen.png" class="img-fluid rounded-top" alt="">
-    </div>
-    <div class="col">
-       
-    </div>
-    <div class="col">
-            Chat
-            <img src="../img/iconlibra.png" class="img-fluid rounded-top" alt="">
-    </div>
-</div>
 
+    <div class="mb-3">
+        <label for="monedaDestino" class="form-label">Selecciona la moneda de destino:</label>
+        <select class="form-select" name="monedaDestino" id="monedaDestino" required>
+            <option value="euro" data-tasa-cambio="1">Euro</option>
+            <option value="dolar" data-tasa-cambio="1.1">Dólar</option>
+            <option value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
+            <option value="yen" data-tasa-cambio="160">Yen Japonés</option>
+            <option value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Convertir</button>
+</form>
 
   </main>
    <!-- Footer -->
