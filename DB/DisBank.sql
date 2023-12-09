@@ -114,13 +114,29 @@ CREATE TABLE CambioMoneda (
 ALTER TABLE Movimientos
 ADD COLUMN DNI_usuario VARCHAR(10),
 ADD FOREIGN KEY (DNI_usuario) REFERENCES Usuario(DNI);
+
+SELECT
+    Movimientos.*,
+    Cuenta.IBAN,
+    Cuenta.Saldo,
+    Usuario.ID AS ID_usuario,  
+    Usuario.DNI AS DNI_usuario
+FROM
+    Movimientos
+LEFT JOIN Cuenta ON Movimientos.IBAN = Cuenta.IBAN
+LEFT JOIN Usuario ON Movimientos.ID_usuario = Usuario.ID;
+
+
+SELECT * FROM Cuenta WHERE ID_usuario = '1';
+
 select * from usuario;
 select * from cuenta;
+
+select * from Movimientos;
 
 select * from Prestamos;
 select * from Registro;
 select * from Login;
-select * from Movimientos;
 select * from CambioMoneda;
 
 
