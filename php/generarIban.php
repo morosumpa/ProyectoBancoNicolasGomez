@@ -26,6 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
+
+    // Generar el IBAN
+    $ibanGenerado = generarIBAN($DNI_usuario, $conn);
+
+    // Establecer las variables de sesión relacionadas con la cuenta
+    $_SESSION['iban_cuenta'] = $ibanGenerado;
+    $_SESSION['saldo_cuenta'] = $saldo;
   
     // Verificar si ya tiene una cuenta
     $sql_check_cuenta = "SELECT IBAN, Saldo FROM Cuenta WHERE ID_usuario = ?";
@@ -54,8 +61,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
         $stmt_insert_cuenta->execute();
 
         echo "Cuenta creada para el usuario con DNI $DNI_usuario. IBAN generado: $iban. Saldo inicial: $saldo.";
+
+        // Redirigir a landingpage.php
+        header("Location: landingpage.php");
+        exit();
     }
-    header("Location: landingpage.php");
+
     $stmt_check_cuenta->close();
     $stmt_insert_cuenta->close();
     $conn->close();

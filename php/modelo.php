@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Pais = $_POST["campo11"];
     $Contrasenya = $_POST["campo12"];
 
-    
+    $_SESSION['DNI'] = $DNI;
+    $_SESSION['Nombre'] = $Nombre; 
     // Hash de la contraseña
     $hashed_password = password_hash($Contrasenya, PASSWORD_DEFAULT);
 
@@ -39,40 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ejecutar la consulta
     if ($conn->query($sql) === TRUE) {
         echo "Datos almacenados correctamente en la base de datos.";
+
         // Guardar el DNI en la sesión
-    $_SESSION['DNI'] = $DNI;
-    header("Location: inicio_sesion.php");
+        $_SESSION['DNI'] = $DNI;
 
-        // Consultar los datos recién insertados
-        $sql_select = "SELECT * FROM Usuario WHERE DNI = '$DNI'";
-        $result = $conn->query($sql_select);
-
-        // Verificar si la consulta SELECT fue exitosa
-        if ($result !== FALSE) {
-            // Verificar si hay filas de resultados
-            if ($result->num_rows > 0) {
-                // Mostrar los datos consultados
-                while ($row = $result->fetch_assoc()) {
-                    echo "<br>";
-                    echo "DNI: " . $row["DNI"] . "<br>";
-                    echo "Nombre: " . $row["Nombre"] . "<br>";
-                    echo "Apellidos: " . $row["Apellidos"] . "<br>";
-                    echo "Email: " . $row["Email"] . "<br>";
-                    echo "Fecha de Nacimiento: " . $row["Fecha_nac"] . "<br>";
-                    echo "Foto: " . $row["Foto"] . "<br>";
-                    echo "Dirección: " . $row["Direccion"] . "<br>";
-                    echo "Código Postal: " . $row["Codigo_postal"] . "<br>";
-                    echo "Ciudad: " . $row["Ciudad"] . "<br>";
-                    echo "Provincia: " . $row["Provincia"] . "<br>";
-                    echo "País: " . $row["Pais"] . "<br>";
-                    echo "Contraseña: " . $row["Contrasenya"] . "<br>";
-                }
-            } else {
-                echo "No se encontraron resultados para el DNI: $campo1";
-            }
-        } else {
-            echo "Error en la consulta SELECT: " . $conn->error;
-        }
+        // Redirigir a la página de inicio de sesión
+        header("Location: inicio_sesion.php");
+        exit();
     } else {
         echo "Error al almacenar datos: " . $conn->error;
     }

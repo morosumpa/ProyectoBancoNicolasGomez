@@ -62,28 +62,26 @@
 </nav>
   </header>
   <main>
-  <div class="container">
-  <div class="row row-cols-1 ">
-    <div class="col-12">
-        <p>Añadir sueldo, ingresos o gastos</p>
-        <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
-        <p>Seleccione el tipo de movimiento (ingreso o gasto) y la cantida que desee mover.</p>
+        <div class="container">
+            <div class="row row-cols-1">
+                <div class="col-12">
+                    <p>Añadir sueldo, ingresos o gastos</p>
+                    <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
+                    <p>Seleccione el tipo de movimiento (ingreso o gasto) y la cantidad que desee mover.</p>
 
-        <form action="enviar_transferencia.php" method="post">
-        <label for="movimiento">Tipo de movimiento:</label>
-        <input type="text" id="movimiento" name="movimiento" required>
+                    <form action="enviar_transferencia.php" method="post">
+                        <label for="movimiento">Tipo de movimiento:</label>
+                        <input type="text" id="movimiento" name="movimiento" required>
 
-        <label for="cantidad">Cantidad:</label>
-        <input type="text" id="cantidad" name="cantidad" required>
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="text" id="cantidad" name="cantidad" required>
 
-        <input type="submit" value="Enviar">
-    </form>
-    </div>
-</div>
-</div>
-
-
-  </main>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
     <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
