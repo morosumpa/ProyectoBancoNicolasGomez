@@ -127,7 +127,8 @@ LEFT JOIN Cuenta ON Movimientos.IBAN = Cuenta.IBAN
 LEFT JOIN Usuario ON Movimientos.ID_usuario = Usuario.ID;
 
 
-SELECT * FROM Cuenta WHERE ID_usuario = '1';
+SELECT IBAN, Saldo FROM Cuenta WHERE ID_usuario = 1;
+
 
 select * from usuario;
 select * from cuenta;
@@ -138,5 +139,4 @@ select * from Prestamos;
 select * from Registro;
 select * from Login;
 select * from CambioMoneda;
-
 

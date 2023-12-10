@@ -70,14 +70,21 @@
                     <p>Seleccione el tipo de movimiento (ingreso o gasto) y la cantidad que desee mover.</p>
 
                     <form action="enviar_transferencia.php" method="post">
-                        <label for="movimiento">Tipo de movimiento:</label>
-                        <input type="text" id="movimiento" name="movimiento" required>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" required>
 
-                        <label for="cantidad">Cantidad:</label>
-                        <input type="text" id="cantidad" name="cantidad" required>
+        <br>
 
-                        <input type="submit" value="Enviar">
-                    </form>
+        <label for="movimiento">Tipo de Operación:</label>
+        <select name="movimiento" required>
+            <option value="ingreso">Ingreso</option>
+            <option value="gasto">Gasto</option>
+        </select>
+
+        <br>
+
+        <input type="submit" value="Realizar Operación">
+    </form>
                 </div>
             </div>
         </div>
