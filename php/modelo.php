@@ -15,8 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Pais = $_POST["campo11"];
     $Contrasenya = $_POST["campo12"];
 
-    $_SESSION['DNI'] = $DNI;
-    $_SESSION['Nombre'] = $Nombre; 
+    // Validar el formato del correo electrónico
+    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+        echo "El formato del correo electrónico no es válido.";
+        exit();
+    }
+
+    // Validar el formato de la fecha de nacimiento
+    if (!preg_match("/^\d{4}-\d{2}-\d{2}$/", $Fecha_nac)) {
+        echo "El formato de fecha de nacimiento no es válido.";
+        exit();
+    }
+
     // Hash de la contraseña
     $hashed_password = password_hash($Contrasenya, PASSWORD_DEFAULT);
 
@@ -34,11 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Preparar la consulta SQL para insertar datos en la tabla Usuario
-    $sql = "INSERT INTO Usuario (DNI, Nombre, Apellidos, Email, Fecha_nac, Foto, Direccion, Codigo_postal, Ciudad, Provincia, Pais, Contrasenya) VALUES ('$DNI', '$Nombre', '$Apellidos', '$Email', '$Fecha_nac', '$Foto', '$Direccion', '$Codigo_postal', '$Ciudad', '$Provincia', '$Pais', '$Contrasenya')";
+    // Sentencia preparada para evitar la inyección de SQL
+    $stmt = $conn->prepare("INSERT INTO Usuario (DNI, Nombre, Apellidos, Email, Fecha_nac, Foto, Direccion, Codigo_postal, Ciudad, Provincia, Pais, Contrasenya) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssssss", $DNI, $Nombre, $Apellidos, $Email, $Fecha_nac, $Foto, $Direccion, $Codigo_postal, $Ciudad, $Provincia, $Pais, $hashed_password);
 
     // Ejecutar la consulta
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->execute()) {
         echo "Datos almacenados correctamente en la base de datos.";
 
         // Guardar el DNI en la sesión
@@ -48,10 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: inicio_sesion.php");
         exit();
     } else {
-        echo "Error al almacenar datos: " . $conn->error;
+        echo "Error al almacenar datos: " . $stmt->error;
     }
 
     // Cerrar la conexión
+    $stmt->close();
     $conn->close();
 } else {
     // Si alguien intenta acceder directamente a iniciar_sesion.php, puedes redirigirlo a la página del formulario

@@ -69,7 +69,7 @@
         <img src="../img/iconprestamo.png" class="img-fluid rounded-top" alt="">
         <p>Introduzca el motivo por el que esta pidiendo un préstamo y la cantidad de este.</p>
 
-        <form action="../pantalla_back/enviar_prestamo.php" method="post">
+        <form action="enviar_prestamo.php" method="post">
         <label for="descripcion">Descripción:</label>
         <input type="text" id="descripcion" name="descripcion" required>
 
