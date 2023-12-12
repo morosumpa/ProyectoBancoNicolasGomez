@@ -89,13 +89,16 @@ CREATE TABLE Login (
 -- Tabla Prestamos
 CREATE TABLE Prestamos (
     ID_prestamo INT PRIMARY KEY AUTO_INCREMENT,
-    ID_usuario INT,
+    DNI_usuario VARCHAR(10) UNIQUE,
+    Monto_pedido DECIMAL(10,2),
+    Descripcion varchar(1000),
     Monto_prestado DECIMAL(10,2),
     Tasa_interes DECIMAL(5,2),
     Plazo_meses INT,
-    Fecha_inicio DATE,
+    Fecha_inicio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Fecha_final DATE,
     Estado VARCHAR(20),
-    FOREIGN KEY (ID_usuario) REFERENCES Usuario(ID)
+    FOREIGN KEY (DNI_usuario) REFERENCES Usuario(DNI)
 );
 
 -- Tabla CambioMoneda
@@ -110,6 +113,22 @@ CREATE TABLE CambioMoneda (
     Fecha_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (IBAN_origen) REFERENCES Cuenta(IBAN)
 );
+INSERT INTO Usuario (DNI, Nombre, Apellidos, Email, Fecha_nac, Foto, Direccion, Codigo_postal, Ciudad, Provincia, Pais, Contrasenya)
+VALUES (
+    '123456789A', 
+    'Admin',      
+    'Admin',      
+    'admin@example.com', 
+    '2000-01-01',  
+    'default.jpg', 
+    'Calle Admin 123', 
+    '12345',       
+    'Ciudad Admin',
+    'Provincia Admin',
+    'Pais Admin', 
+    'admin'       
+);
+
 -- Modificar la tabla Movimientos
 ALTER TABLE Movimientos
 ADD COLUMN DNI_usuario VARCHAR(10),
@@ -129,14 +148,16 @@ LEFT JOIN Usuario ON Movimientos.ID_usuario = Usuario.ID;
 
 SELECT IBAN, Saldo FROM Cuenta WHERE ID_usuario = 1;
 
+SELECT IBAN FROM Cuenta WHERE ID_usuario = (SELECT ID FROM Usuario WHERE DNI = '123456');
+
 
 select * from usuario;
 select * from cuenta;
-
+select * from CambioMoneda;
 select * from Movimientos;
 
 select * from Prestamos;
+
 select * from Registro;
 select * from Login;
-select * from CambioMoneda;
 
