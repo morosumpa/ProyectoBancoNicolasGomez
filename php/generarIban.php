@@ -50,6 +50,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
         $nuevo_saldo = $saldo_actual + $saldo;
         echo " Saldo actual: $saldo_actual. Nuevo saldo después de la suma: $nuevo_saldo.";
 
+        // Actualizar el saldo en la tabla Cuenta
+        $sql_update_saldo = "UPDATE Cuenta SET Saldo = Saldo + ? WHERE ID_usuario = ?";
+        $stmt_update_saldo = $conn->prepare($sql_update_saldo);
+        $stmt_update_saldo->bind_param("ds", $saldo, $DNI_usuario);
+        $stmt_update_saldo->execute();
+        $stmt_update_saldo->close();
     } else {
         // Generar el IBAN
         $iban = generarIBAN($DNI_usuario, $conn);

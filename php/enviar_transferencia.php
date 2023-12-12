@@ -32,8 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
     $result_get_iban = $stmt_get_iban->get_result();
 
     // Verificar si se obtuvo el IBAN
-    if ($result_get_iban->num_rows > 0) {
-        $row = $result_get_iban->fetch_assoc();
+    if ($row = $result_get_iban->fetch_assoc()) {
         $iban = $row['IBAN'];
 
         echo "IBAN obtenido con éxito: $iban<br>"; // Salida de depuración
@@ -44,9 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
         // Operaciones según el tipo de movimiento (ingreso o gasto).
         // Actualizar el saldo en la tabla Cuenta según el tipo de movimiento.
         if ($movimiento === "ingreso") {
-            $sql_update_saldo = "UPDATE Cuenta SET Saldo = Saldo + ? WHERE ID_usuario = ?";
+            $sql_update_saldo = "UPDATE Cuenta SET Saldo = Saldo + ? WHERE IBAN = ?";
         } elseif ($movimiento === "gasto") {
-            $sql_update_saldo = "UPDATE Cuenta SET Saldo = Saldo - ? WHERE ID_usuario = ?";
+            $sql_update_saldo = "UPDATE Cuenta SET Saldo = Saldo - ? WHERE IBAN = ?";
         } else {
             echo "Tipo de movimiento no válido: $movimiento";
             $stmt_get_iban->close();
@@ -55,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
         }
 
         $stmt_update_saldo = $conn->prepare($sql_update_saldo);
-        $stmt_update_saldo->bind_param("ds", $cantidadFloat, $DNI_usuario);
+        $stmt_update_saldo->bind_param("ds", $cantidadFloat, $iban);
         if (!$stmt_update_saldo->execute()) {
             echo "Error al actualizar el saldo: " . $stmt_update_saldo->error;
             $stmt_update_saldo->close();
@@ -95,20 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['DNI'])) {
                 exit();
             }
             $stmt_insert_movimiento->close();
-
-            // Actualizar el saldo general en la tabla Cuenta
-            $sql_update_saldo_general = "UPDATE Cuenta SET Saldo = Saldo + ? WHERE ID_usuario = ?";
-            $stmt_update_saldo_general = $conn->prepare($sql_update_saldo_general);
-            $stmt_update_saldo_general->bind_param("ds", $cantidadFloat, $DNI_usuario);
-            if (!$stmt_update_saldo_general->execute()) {
-                echo "Error al actualizar el saldo general: " . $stmt_update_saldo_general->error;
-                $stmt_update_saldo_general->close();
-                $stmt_get_user_id->close();
-                $stmt_get_iban->close();
-                $conn->close();
-                exit();
-            }
-            $stmt_update_saldo_general->close();
 
             echo "Operación realizada con éxito.";
         } else {
