@@ -27,7 +27,7 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <form action="verificacion.php" method="post">
+  <form action="verificacion_admin.php" method="post">
   <label for="campo1">DNI:</label>
         <input type="text" id="campo1" name="campo1" required>
 
@@ -36,7 +36,7 @@
 
         <input type="submit" value="Enviar">
     </form>
-    <p>¿No tienes cuenta? <a href="registro.php"><u>pulse aqui</u></a> para registrarte</p>
+<p>¿Entraste sin querer? <a href="inicio_sesion.php"><u>pulse aqui</u></a> para volver</p>
   </main>
   <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">

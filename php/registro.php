@@ -66,7 +66,7 @@
 
         <input type="submit" value="Enviar">
     </form>
-
+    <p>¿Eres admin? <a href="inicio_admin.php"><u>pulse aqui</u></a> para iniciar sesion como tal</p>
   </main>
    <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
