@@ -63,8 +63,49 @@
 </nav>
   </header>
   <main>
-  
+    <div class="container">
+      <h1>Bienvenido, Administrador</h1>
 
+      <!-- Aquí puedes agregar el código para mostrar la información del perfil del administrador -->
+
+      <h2>Préstamos del Usuario</h2>
+      <?php
+        $servername = "localhost";
+        $username = "root";
+        $password_db = "";
+        $database = "DisBank";
+    
+        $conn = new mysqli($servername, $username, $password_db, $database);
+    
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
+        }
+       
+
+        $sql = "SELECT * FROM Prestamos WHERE DNI_usuario = '12345678A'"; 
+        $result = $conn->query($sql);
+        
+        // Verifica errores en la consulta SQL
+        if (!$result) {
+            echo "Error en la consulta: " . $conn->error;
+        } else {
+            // Mostrar los resultados
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>ID Prestamo: " . $row["ID_prestamo"] . "<br>" .
+                        "Monto Pedido: " . $row["Monto_pedido"] . "<br>" .
+                        "Descripción: " . $row["Descripcion"] . "<br>" .
+                        "Fecha Inicio: " . $row["Fecha_inicio"] . "<br><br></p>";
+                }
+            } else {
+                echo "No hay préstamos para este usuario.";
+            }
+        }
+        
+        // Cierra la conexión
+        $conn->close();
+        ?>
+    </div>
   </main>
   <footer>
     <!-- place footer here -->

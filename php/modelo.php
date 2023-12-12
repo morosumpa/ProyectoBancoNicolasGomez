@@ -27,9 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Hash de la contraseña
-    $hashed_password = password_hash($Contrasenya, PASSWORD_DEFAULT);
-
     // Configuración de la conexión a la base de datos
     $servername = "localhost";
     $username = "root";
@@ -46,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sentencia preparada para evitar la inyección de SQL
     $stmt = $conn->prepare("INSERT INTO Usuario (DNI, Nombre, Apellidos, Email, Fecha_nac, Foto, Direccion, Codigo_postal, Ciudad, Provincia, Pais, Contrasenya) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssssss", $DNI, $Nombre, $Apellidos, $Email, $Fecha_nac, $Foto, $Direccion, $Codigo_postal, $Ciudad, $Provincia, $Pais, $hashed_password);
+    $stmt->bind_param("ssssssssssss", $DNI, $Nombre, $Apellidos, $Email, $Fecha_nac, $Foto, $Direccion, $Codigo_postal, $Ciudad, $Provincia, $Pais, $Contrasenya);
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
