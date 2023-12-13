@@ -1,3 +1,98 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['DNI'])) {
+    echo "Error: DNI de usuario no encontrado en la sesión.";
+    exit;
+}
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "DisBank";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+$dni_usuario = $_SESSION['DNI'];
+
+// Obtener información del Usuario
+$sql_usuario = "SELECT * FROM Usuario WHERE DNI = ?";
+$stmt_usuario = $conn->prepare($sql_usuario);
+
+if (!$stmt_usuario) {
+    die("Error al preparar la consulta del Usuario: " . $conn->error);
+}
+
+$stmt_usuario->bind_param("s", $dni_usuario);
+$stmt_usuario->execute();
+$result_usuario = $stmt_usuario->get_result();
+$usuario = $result_usuario->fetch_assoc();
+$stmt_usuario->close();
+
+// Obtener información de la Cuenta
+$sql_cuenta = "SELECT * FROM Cuenta WHERE ID_usuario = (SELECT ID FROM Usuario WHERE DNI = ?)";
+$stmt_cuenta = $conn->prepare($sql_cuenta);
+
+if (!$stmt_cuenta) {
+    die("Error al preparar la consulta de la Cuenta: " . $conn->error);
+}
+
+$stmt_cuenta->bind_param("s", $dni_usuario);
+$stmt_cuenta->execute();
+$result_cuenta = $stmt_cuenta->get_result();
+$cuenta = $result_cuenta->fetch_assoc();
+$stmt_cuenta->close();
+
+// Obtener información de los Movimientos
+$sql_movimientos = "SELECT * FROM Movimientos WHERE ID_usuario = (SELECT ID FROM Usuario WHERE DNI = ?)";
+$stmt_movimientos = $conn->prepare($sql_movimientos);
+
+if (!$stmt_movimientos) {
+    die("Error al preparar la consulta de Movimientos: " . $conn->error);
+}
+
+$stmt_movimientos->bind_param("s", $dni_usuario);
+$stmt_movimientos->execute();
+$result_movimientos = $stmt_movimientos->get_result();
+$movimientos = $result_movimientos->fetch_all(MYSQLI_ASSOC);
+$stmt_movimientos->close();
+
+// Obtener información del CambioMoneda
+$sql_cambio_moneda = "SELECT * FROM CambioMoneda WHERE IBAN_origen IN (SELECT IBAN FROM Cuenta WHERE ID_usuario = (SELECT ID FROM Usuario WHERE DNI = ?))";
+$stmt_cambio_moneda = $conn->prepare($sql_cambio_moneda);
+
+if (!$stmt_cambio_moneda) {
+    die("Error al preparar la consulta de CambioMoneda: " . $conn->error);
+}
+
+$stmt_cambio_moneda->bind_param("s", $dni_usuario);
+$stmt_cambio_moneda->execute();
+$result_cambio_moneda = $stmt_cambio_moneda->get_result();
+$cambio_moneda = $result_cambio_moneda->fetch_assoc();
+$stmt_cambio_moneda->close();
+
+// Obtener información de los Prestamos
+$sql_prestamos = "SELECT * FROM Prestamos WHERE DNI_usuario = ?";
+$stmt_prestamos = $conn->prepare($sql_prestamos);
+
+if (!$stmt_prestamos) {
+    die("Error al preparar la consulta de Prestamos: " . $conn->error);
+}
+
+$stmt_prestamos->bind_param("s", $dni_usuario);
+$stmt_prestamos->execute();
+$result_prestamos = $stmt_prestamos->get_result();
+$prestamos = $result_prestamos->fetch_all(MYSQLI_ASSOC);
+$stmt_prestamos->close();
+
+// Cierra la conexión
+$conn->close();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +118,7 @@
 </head>
 
 <body>
-<header>
+  <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -62,15 +157,40 @@
   </div>
 </nav>
   </header>
-  <main>
-  
+    <main>
+        <div class="container">
+            <h1>Perfil del Usuario</h1>
 
-  </main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
+            <!-- Mostrar información del Usuario -->
+            <h2>Información del Usuario</h2>
+            <pre><?php print_r($usuario); ?></pre>
 
+            <!-- Mostrar información de la Cuenta -->
+            <h2>Información de la Cuenta</h2>
+            <pre><?php print_r($cuenta); ?></pre>
 
+            <!-- Mostrar información de los Movimientos -->
+            <h2>Movimientos</h2>
+            <pre><?php print_r($movimientos); ?></pre>
+
+            <!-- Mostrar información del CambioMoneda -->
+            <h2>Cambio de Moneda</h2>
+            <pre><?php print_r($cambio_moneda); ?></pre>
+
+            <!-- Mostrar información de los Prestamos -->
+            <h2>Préstamos</h2>
+            <pre><?php print_r($prestamos); ?></pre>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Copyright -->
+  <div class="text-center p-4">
+    <p>DisBank@Copyright</p>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </body>
 
 </html>

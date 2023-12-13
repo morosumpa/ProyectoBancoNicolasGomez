@@ -27,9 +27,24 @@
     <!-- place navbar here -->
   </header>
   <main>
-  
+  <form action="datos_admin_prestamo.php" method="post">
+            <!-- Otros campos del formulario -->
+            <label for="tasa_interes">Tasa de Interés:</label>
+            <input type="text" id="tasa_interes" name="tasa_interes" required>
+
+            <label for="plazo_meses">Plazo en Meses:</label>
+            <input type="text" id="plazo_meses" name="plazo_meses" required>
+
+            <label for="fecha_final">Última Fecha de Pago:</label>
+            <input type="date" id="fecha_final" name="fecha_final" required>
+
+            <input type="hidden" name="dni_usuario" value="<?php echo $dni_usuario; ?>">
+
+            <button type="submit">Aceptar Préstamo</button>
+        </form>
 
   </main>
+  
   <footer>
     <!-- place footer here -->
   </footer>
