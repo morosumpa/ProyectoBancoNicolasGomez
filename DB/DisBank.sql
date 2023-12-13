@@ -155,9 +155,9 @@ select * from usuario;
 select * from cuenta;
 select * from CambioMoneda;
 select * from Movimientos;
-
 select * from Prestamos;
 
 select * from Registro;
 select * from Login;
+
 
