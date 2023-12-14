@@ -1,7 +1,9 @@
-$font-stack: sans-serif;
-$primary-color:#333;
-
+$bgcolorbody:#2B8C60;
+$textfont:"sans-serif";
+$txtcoloroscuro:#020202;
+$txtcolorclaro:#A4C3B2;
 body{
-    font: 100% $font-stack;
-    color: $primary-color;
+background-color:$bgcolorbody;
+font-family: $textfont;
+color:$txtcoloroscuro;
 }
