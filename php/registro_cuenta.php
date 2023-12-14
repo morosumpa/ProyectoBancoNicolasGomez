@@ -30,7 +30,7 @@
 
         <br>
 
-        <label  class="colorcampostxt" for="tipo_cuenta">Tipo de Cuenta:</label>
+        <label for="tipo_cuenta">Tipo de Cuenta:</label>
         <select  class="colorcampostxt" name="tipo_cuenta" required>
             <option  class="colorcampostxt" value="CuentaCorriente">Cuenta Corriente</option>
             <option  class="colorcampostxt" value="CuentaAhorro">Cuenta ahorro</option>
@@ -38,7 +38,7 @@
 
         <br>
 
-        <input  class="colorcampostxt" type="submit" value="Registrar Cuenta">
+        <input  class="botonforms" type="submit" value="Registrar Cuenta">
     </form>
     </div>
      <!-- Footer -->

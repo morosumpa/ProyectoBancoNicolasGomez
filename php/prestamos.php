@@ -73,7 +73,7 @@
         <label for="cantidad">Cantidad:</label>
         <input class="colorcampostxt" type="text" id="cantidad" name="cantidad" required>
 
-        <input class="colorcampostxt" type="submit" value="Enviar">
+        <input class="botonforms" type="submit" value="Enviar">
     </form>
     </div>
 </div>

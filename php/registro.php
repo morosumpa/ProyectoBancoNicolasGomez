@@ -65,7 +65,7 @@
             <label for="campo12">Contraseña:</label>
             <input class="colorcampostxt" type="password" id="campo12" name="campo12" required>
 
-            <input class="colorcampostxt" type="submit" value="Enviar">
+            <input class="botonforms" type="submit" value="Enviar">
         </form>
     <p>¿Eres admin? <a href="inicio_admin.php"><u>pulse aqui</u></a> para iniciar sesion como tal</p>
   </main>

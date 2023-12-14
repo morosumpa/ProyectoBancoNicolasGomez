@@ -34,7 +34,7 @@
         <label for="campo12">Contraseña:</label>
         <input  class="colorcampostxt" type="text" id="campo12" name="campo12" required>
 
-        <input  class="colorcampostxt" type="submit" value="Enviar">
+        <input  class="botonforms" type="submit" value="Enviar">
     </form>
     <p>¿No tienes cuenta? <a href="registro.php"><u>pulse aqui</u></a> para registrarte</p>
   </main>

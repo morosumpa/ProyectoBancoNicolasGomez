@@ -40,7 +40,7 @@
 
             <input class="colorcampostxt" type="hidden" name="dni_usuario" value="<?php echo $dni_usuario; ?>">
 
-            <button class="colorcampostxt" type="submit">Aceptar Préstamo</button>
+            <button class="botonadm" type="submit">Aceptar Préstamo</button>
         </form>
 
   </main>

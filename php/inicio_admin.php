@@ -34,14 +34,14 @@
         <label for="campo12">Contraseña:</label>
         <input  class="colorcampostxt" type="text" id="campo12" name="campo12" required>
 
-        <input  class="colorcampostxt" type="submit" value="Enviar">
+        <input  class="botonadm" type="submit" value="Enviar">
     </form>
 <p>¿Entraste sin querer? <a href="inicio_sesion.php"><u>pulse aqui</u></a> para volver</p>
   </main>
   <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
-  <div class="text-center p-4">
+  <div class="text-center p-4 colorfooter">
     <p>DisBank@Copyright</p>
   </div>
   <!-- Copyright -->

@@ -1,0 +1,18 @@
+
+.botonbase {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .botonforms {
+    @extend .botonbase;
+    background-color: #A4C3B2;
+    color: #020202;
+  }
+  
+  .botonadm {
+    @extend .botonbase;
+    background-color: #A4C3B2;
+    color: #020202;
+  }
+  

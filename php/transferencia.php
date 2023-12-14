@@ -80,7 +80,7 @@
 
         <br>
 
-        <input class="colorcampostxt" type="submit" value="Realizar Operación">
+        <input class="botonforms" type="submit" value="Realizar Operación">
     </form>
                 </div>
             </div>
