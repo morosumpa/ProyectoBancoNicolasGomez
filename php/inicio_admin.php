@@ -23,20 +23,29 @@
 </head>
 
 <body>
-  <header>
-    <!-- place navbar here -->
+<header>
+    <div class="colorHeader">
+  <img src="../img/DisBankBanner.png">
+</div>
   </header>
   <main>
+    <div class="container">
   <form class="colorforms" action="verificacion_admin.php" method="post">
-  <label for="campo1">DNI:</label>
-        <input  class="colorcampostxt" type="text" id="campo1" name="campo1" required>
+  <div class="mb-3">
+    <label for="campo1" class="form-label">DNI:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo1" name="campo1" required>
+  </div>
 
-        <label for="campo12">Contraseña:</label>
-        <input  class="colorcampostxt" type="text" id="campo12" name="campo12" required>
+  <div class="mb-3">
+    <label for="campo12" class="form-label">Contraseña:</label>
+    <input class="form-control colorcampostxt" type="password" id="campo12" name="campo12" required>
+  </div>
 
-        <input  class="botonadm" type="submit" value="Enviar">
-    </form>
+  <input class="btn btn-primary botonadm" type="submit" value="Enviar">
+</form>
+
 <p>¿Entraste sin querer? <a href="inicio_sesion.php"><u>pulse aqui</u></a> para volver</p>
+</div>
   </main>
   <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">

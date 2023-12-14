@@ -25,7 +25,7 @@
 <body><header>
   <nav class="navbar navbar-expand-lg navbar-light colorHeader">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+  
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -63,36 +63,37 @@
   <div class="container">
   <div class="col-12">
         <p>Cambio de moneda</p>
-        <img src="../img/iconmoneda.png" class="img-fluid rounded-top" alt="">
+        <img src="../img/iconmoneda.png" class="img-fluid rounded-top imgajustada" alt="">
         <p>Escoja la moneda deseada a cambiar de su capital</p>
 </div>
   <div class="row row-cols-1">
      <!-- Formulario de cambio de moneda -->
      <form action="generarMoneda.php" method="post">
-    <div class="mb-3">
-        <label for="monedaOrigen" class="form-label">Selecciona la moneda de origen:</label>
-        <select  class="colorcampostxt" class="form-select" name="monedaOrigen" id="monedaOrigen" required>
-            <option  class="colorcampostxt" value="euro" data-tasa-cambio="1">Euro</option>
-            <option  class="colorcampostxt" value="dolar" data-tasa-cambio="1.1">Dólar</option>
-            <option  class="colorcampostxt" value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
-            <option  class="colorcampostxt" value="yen" data-tasa-cambio="160">Yen Japonés</option>
-            <option  class="colorcampostxt" value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
-        </select>
-    </div>
+  <div class="mb-3">
+    <label for="monedaOrigen" class="form-label">Selecciona la moneda de origen:</label>
+    <select class="form-control colorcampostxt" name="monedaOrigen" id="monedaOrigen" required>
+      <option class="colorcampostxt" value="euro" data-tasa-cambio="1">Euro</option>
+      <option class="colorcampostxt" value="dolar" data-tasa-cambio="1.1">Dólar</option>
+      <option class="colorcampostxt" value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
+      <option class="colorcampostxt" value="yen" data-tasa-cambio="160">Yen Japonés</option>
+      <option class="colorcampostxt" value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
+    </select>
+  </div>
 
-    <div class="mb-3">
-        <label for="monedaDestino" class="form-label">Selecciona la moneda de destino:</label>
-        <select class="form-select" name="monedaDestino" id="monedaDestino" required>
-            <option  class="colorcampostxt" value="euro" data-tasa-cambio="1">Euro</option>
-            <option  class="colorcampostxt" value="dolar" data-tasa-cambio="1.1">Dólar</option>
-            <option  class="colorcampostxt" value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
-            <option  class="colorcampostxt" value="yen" data-tasa-cambio="160">Yen Japonés</option>
-            <option  class="colorcampostxt" value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
-        </select>
-    </div>
+  <div class="mb-3">
+    <label for="monedaDestino" class="form-label">Selecciona la moneda de destino:</label>
+    <select class="form-control colorcampostxt" name="monedaDestino" id="monedaDestino" required>
+      <option class="colorcampostxt" value="euro" data-tasa-cambio="1">Euro</option>
+      <option class="colorcampostxt" value="dolar" data-tasa-cambio="1.1">Dólar</option>
+      <option class="colorcampostxt" value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
+      <option class="colorcampostxt" value="yen" data-tasa-cambio="160">Yen Japonés</option>
+      <option class="colorcampostxt" value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
+    </select>
+  </div>
 
-    <button type="submit" class="btn btn-primary">Convertir</button>
+  <button type="submit" class="btn btn-primary botonforms">Convertir</button>
 </form>
+
 
   </main>
    <!-- Footer -->

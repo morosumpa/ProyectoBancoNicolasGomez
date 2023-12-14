@@ -38,10 +38,37 @@ nav ul li a {
   background-color: #A4C3B2;
 }
 
+form {
+  text-align: center;
+  padding: 3px;
+}
+
 body {
   background-color: #2B8C60;
   font-family: "sans-serif";
   color: #020202;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.banner {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.imgajustada {
+  height: 200px;
+  width: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .botonbase, .botonadm, .botonforms {

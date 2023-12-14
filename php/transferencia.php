@@ -12,89 +12,91 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+    </script>
 
-<link rel="stylesheet" href="../sass/css/style.css">
+  <link rel="stylesheet" href="../sass/css/style.css">
   <script defer src="../assets/js/web.js"></script>
 </head>
 
-<body><header>
-  <nav class="navbar navbar-expand-lg navbar-light colorHeader">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="landingpage.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="perfil.php">Perfil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="transferencia.php">Transferencias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="prestamo.php">Prestamos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="cambio_moneda.php">Cambio moneda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="registro_cuenta.php">Registro de cuenta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="chat.php">Chat</a>
-        </li>
-      </ul>
-     
-    </div>
-  </div>
-</nav>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light colorHeader">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="landingpage.php">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="perfil.php">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="transferencia.php">Transferencias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="prestamo.php">Prestamos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="cambio_moneda.php">Cambio moneda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="registro_cuenta.php">Registro de cuenta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="chat.php">Chat</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
   </header>
   <main>
-        <div class="container">
-            <div class="row row-cols-1">
-                <div class="col-12">
-                    <p>Añadir sueldo, ingresos o gastos</p>
-                    <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
-                    <p>Seleccione el tipo de movimiento (ingreso o gasto) y la cantidad que desee mover.</p>
+    <div class="container">
+      <div class="row row-cols-1">
+        <div class="col-12">
+          <p>Añadir sueldo, ingresos o gastos</p>
+          <img src="../img/icontransferencia.png" class="img-fluid rounded-top imgajustada" alt="">
+          <p>Seleccione el tipo de movimiento (ingreso o gasto) y la cantidad que desee mover.</p>
 
-                    <form class="colorforms" action="enviar_transferencia.php" method="post">
-        <label  for="cantidad">Cantidad:</label>
-        <input class="colorcampostxt" type="number" name="cantidad" required>
-
-        <br>
-
-        <label for="movimiento">Tipo de Operación:</label>
-        <select  class="colorcampostxt" name="movimiento" required>
-            <option class="colorcampostxt" value="ingreso">Ingreso</option>
-            <option  class="colorcampostxt" value="gasto">Gasto</option>
-        </select>
-
-        <br>
-
-        <input class="botonforms" type="submit" value="Realizar Operación">
-    </form>
-                </div>
+          <form class="colorforms" action="enviar_transferencia.php" method="post">
+            <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad:</label>
+              <input class="form-control colorcampostxt" type="number" name="cantidad" required>
             </div>
+
+            <div class="mb-3">
+              <label for="movimiento" class="form-label">Tipo de Operación:</label>
+              <select class="form-control colorcampostxt" name="movimiento" required>
+                <option class="colorcampostxt" value="ingreso">Ingreso</option>
+                <option class="colorcampostxt" value="gasto">Gasto</option>
+              </select>
+            </div>
+
+            <input class="btn btn-primary botonforms" type="submit" value="Realizar Operación">
+          </form>
+
         </div>
-    </main>
-    <!-- Footer -->
-<footer class="text-center text-lg-start bg-body-tertiary text-muted">
-  <!-- Copyright -->
-  <div class="text-center p-4 footerestandar">
-    <p>DisBank@Copyright</p>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Copyright -->
+    <div class="text-center p-4 footerestandar">
+      <p>DisBank@Copyright</p>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
 
 
 </body>

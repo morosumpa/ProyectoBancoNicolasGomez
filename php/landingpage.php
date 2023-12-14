@@ -38,7 +38,6 @@ if (!isset($_SESSION['Nombre'])) {
   <header>
   <nav class="navbar navbar-expand-lg navbar-light colorHeader">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,27 +78,27 @@ if (!isset($_SESSION['Nombre'])) {
   ?>
   <div class="row row-cols-2">
     <div class="col">
+      ingresos o gastos
         <a href="transferencia.php"> 
-        ingresos o gastos
-            <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
+            <img src="../img/icontransferencia.png" class="img-fluid rounded-top imgajustada" alt="">
         </a>
     </div>
     <div class="col">
+       Prestamos
         <a href="prestamos.php"> 
-            Prestamos
-            <img src="../img/iconprestamo.png" class="img-fluid rounded-top" alt="">
+            <img src="../img/iconprestamo.png" class="img-fluid rounded-top imgajustada" alt="">
         </a>
     </div>
     <div class="col">
+       Cambio moneda
         <a href="cambio_moneda.php"> 
-            Cambio moneda
-            <img src="../img/iconmoneda.png" class="img-fluid rounded-top" alt="">
+            <img src="../img/iconmoneda.png" class="img-fluid rounded-top imgajustada" alt="" >
         </a>
     </div>
     <div class="col">
+       Chat
         <a href="chat.php">
-            Chat
-            <img src="../img/iconchat.png" class="img-fluid rounded-top" alt="">
+            <img src="../img/iconchat.png" class="img-fluid rounded-top imgajustada" alt="" >
         </a>
     </div>
 </div>

@@ -7,3 +7,16 @@ background-color:$bgcolorbody;
 font-family: $textfont;
 color:$txtcoloroscuro;
 }
+
+img{
+    width: 100%;
+    height: auto;
+  }
+  .banner{
+    align-items: center;
+    justify-content: center;
+  }
+  .imgajustada{
+    height: 200px;
+    width: 200px;
+  }

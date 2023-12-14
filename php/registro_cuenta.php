@@ -20,26 +20,32 @@
 <link rel="stylesheet" href="../sass/css/style.css">
   <script defer src="../assets/js/web.js"></script>
 </head>
+<header>
+    <div class="colorHeader">
+  <img src="../img/DisBankBanner.png">
+</div>
+  </header>
 <body>
   <div class="container">
     <h2>Registro de Cuenta</h2>
 
-    <form class="colorforms"action="generarIban.php" method="post">
-        <label for="saldo">Saldo Inicial:</label>
-        <input class="colorcampostxt" type="number" name="saldo" required>
+    <form class="colorforms" action="generarIban.php" method="post">
+  <div class="mb-3">
+    <label for="saldo" class="form-label">Saldo Inicial:</label>
+    <input class="form-control colorcampostxt" type="number" name="saldo" required>
+  </div>
 
-        <br>
+  <div class="mb-3">
+    <label for="tipo_cuenta" class="form-label">Tipo de Cuenta:</label>
+    <select class="form-control colorcampostxt" name="tipo_cuenta" required>
+      <option class="colorcampostxt" value="CuentaCorriente">Cuenta Corriente</option>
+      <option class="colorcampostxt" value="CuentaAhorro">Cuenta ahorro</option>
+    </select>
+  </div>
 
-        <label for="tipo_cuenta">Tipo de Cuenta:</label>
-        <select  class="colorcampostxt" name="tipo_cuenta" required>
-            <option  class="colorcampostxt" value="CuentaCorriente">Cuenta Corriente</option>
-            <option  class="colorcampostxt" value="CuentaAhorro">Cuenta ahorro</option>
-        </select>
+  <input class="btn btn-primary botonforms" type="submit" value="Registrar Cuenta">
+</form>
 
-        <br>
-
-        <input  class="botonforms" type="submit" value="Registrar Cuenta">
-    </form>
     </div>
      <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">

@@ -24,49 +24,76 @@
 
 <body>
   <header>
-    <!-- place navbar here -->
+    <div class="colorHeader">
+  <img src="../img/DisBankBanner.png">
+</div>
   </header>
   <main>
 <div class="container">
-  <form class="colorforms" action="modelo.php" method="post">
-            <label  for="campo1">DNI:</label>
-            <input class="colorcampostxt" type="text" id="campo1" name="campo1" required>
+<form class="colorforms" action="modelo.php" method="post">
+  <div class="mb-3">
+    <label for="campo1" class="form-label">DNI:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo1" name="campo1" required>
+  </div>
 
-            <label  for="campo2">Nombre:</label>
-            <input class="colorcampostxt" type="text" id="campo2" name="campo2" required>
+  <div class="mb-3">
+    <label for="campo2" class="form-label">Nombre:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo2" name="campo2" required>
+  </div>
 
-            <label  for="campo3">Apellidos:</label>
-            <input class="colorcampostxt" type="text" id="campo3" name="campo3" required>
+  <div class="mb-3">
+    <label for="campo3" class="form-label">Apellidos:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo3" name="campo3" required>
+  </div>
 
-            <label  for="campo4">Email:</label>
-            <input class="colorcampostxt" type="email" id="campo4" name="campo4" required>
+  <div class="mb-3">
+    <label for="campo4" class="form-label">Email:</label>
+    <input class="form-control colorcampostxt" type="email" id="campo4" name="campo4" required>
+  </div>
 
-            <label for="campo5">Fecha de nacimiento:</label>
-            <input class="colorcampostxt" type="date" id="campo5" name="campo5" required>
+  <div class="mb-3">
+    <label for="campo5" class="form-label">Fecha de nacimiento:</label>
+    <input class="form-control colorcampostxt" type="date" id="campo5" name="campo5" required>
+  </div>
 
-            <label  for="campo6">Foto:</label>
-            <input class="colorcampostxt" type="text" id="campo6" name="campo6" required>
+  <div class="mb-3">
+    <label for="campo6" class="form-label">Foto:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo6" name="campo6" required>
+  </div>
 
-            <label  for="campo7">Dirección:</label>
-            <input class="colorcampostxt" type="text" id="campo7" name="campo7" required>
+  <div class="mb-3">
+    <label for="campo7" class="form-label">Dirección:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo7" name="campo7" required>
+  </div>
 
-            <label  for="campo8">Codigo postal:</label>
-            <input class="colorcampostxt" type="text" id="campo8" name="campo8" required>
+  <div class="mb-3">
+    <label for="campo8" class="form-label">Codigo postal:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo8" name="campo8" required>
+  </div>
 
-            <label  for="campo9">Ciudad:</label>
-            <input class="colorcampostxt" type="text" id="campo9" name="campo9" required>
+  <div class="mb-3">
+    <label for="campo9" class="form-label">Ciudad:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo9" name="campo9" required>
+  </div>
 
-            <label  for="campo10">Provincia:</label>
-            <input class="colorcampostxt" type="text" id="campo10" name="campo10" required>
+  <div class="mb-3">
+    <label for="campo10" class="form-label">Provincia:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo10" name="campo10" required>
+  </div>
 
-            <label  for="campo11">País:</label>
-            <input class="colorcampostxt" type="text" id="campo11" name="campo11" required>
+  <div class="mb-3">
+    <label for="campo11" class="form-label">País:</label>
+    <input class="form-control colorcampostxt" type="text" id="campo11" name="campo11" required>
+  </div>
 
-            <label for="campo12">Contraseña:</label>
-            <input class="colorcampostxt" type="password" id="campo12" name="campo12" required>
+  <div class="mb-3">
+    <label for="campo12" class="form-label">Contraseña:</label>
+    <input class="form-control colorcampostxt" type="password" id="campo12" name="campo12" required>
+  </div>
 
-            <input class="botonforms" type="submit" value="Enviar">
-        </form>
+  <input class="btn btn-primary botonforms" type="submit" value="Enviar">
+</form>
+
     <p>¿Eres admin? <a href="inicio_admin.php"><u>pulse aqui</u></a> para iniciar sesion como tal</p>
   </main>
 </div>
