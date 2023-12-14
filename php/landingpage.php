@@ -66,10 +66,7 @@ if (!isset($_SESSION['Nombre'])) {
           <a class="nav-link active" aria-current="page" href="chat.php">Chat</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+     
     </div>
   </div>
 </nav>
@@ -112,7 +109,7 @@ if (!isset($_SESSION['Nombre'])) {
     <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
-  <div class="text-center p-4">
+  <div class="text-center p-4 colorfooter">
     <p>DisBank@Copyright</p>
   </div>
   <!-- Copyright -->

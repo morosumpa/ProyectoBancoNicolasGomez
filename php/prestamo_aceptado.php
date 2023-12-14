@@ -27,28 +27,33 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <form action="datos_admin_prestamo.php" method="post">
+  <form class="colorHeader" action="datos_admin_prestamo.php" method="post">
             <!-- Otros campos del formulario -->
             <label for="tasa_interes">Tasa de Interés:</label>
-            <input type="text" id="tasa_interes" name="tasa_interes" required>
+            <input class="colorcampostxt" type="text" id="tasa_interes" name="tasa_interes" required>
 
             <label for="plazo_meses">Plazo en Meses:</label>
-            <input type="text" id="plazo_meses" name="plazo_meses" required>
+            <input class="colorcampostxt" type="text" id="plazo_meses" name="plazo_meses" required>
 
             <label for="fecha_final">Última Fecha de Pago:</label>
-            <input type="date" id="fecha_final" name="fecha_final" required>
+            <input class="colorcampostxt" type="date" id="fecha_final" name="fecha_final" required>
 
-            <input type="hidden" name="dni_usuario" value="<?php echo $dni_usuario; ?>">
+            <input class="colorcampostxt" type="hidden" name="dni_usuario" value="<?php echo $dni_usuario; ?>">
 
-            <button type="submit">Aceptar Préstamo</button>
+            <button class="colorcampostxt" type="submit">Aceptar Préstamo</button>
         </form>
 
   </main>
   
-  <footer>
-    <!-- place footer here -->
-  </footer>
-
+ <!-- Footer -->
+ <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Copyright -->
+  <div class="text-center p-4 colorfooter">
+    <p>DisBank@Copyright</p>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 
 </body>
 

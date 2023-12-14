@@ -23,7 +23,7 @@
 </head>
 
 <body><header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light colorHeader">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +53,7 @@
           <a class="nav-link active" aria-current="page" href="chat.php">Chat</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+     
     </div>
   </div>
 </nav>
@@ -74,23 +71,23 @@
      <form action="generarMoneda.php" method="post">
     <div class="mb-3">
         <label for="monedaOrigen" class="form-label">Selecciona la moneda de origen:</label>
-        <select class="form-select" name="monedaOrigen" id="monedaOrigen" required>
-            <option value="euro" data-tasa-cambio="1">Euro</option>
-            <option value="dolar" data-tasa-cambio="1.1">Dólar</option>
-            <option value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
-            <option value="yen" data-tasa-cambio="160">Yen Japonés</option>
-            <option value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
+        <select  class="colorcampostxt" class="form-select" name="monedaOrigen" id="monedaOrigen" required>
+            <option  class="colorcampostxt" value="euro" data-tasa-cambio="1">Euro</option>
+            <option  class="colorcampostxt" value="dolar" data-tasa-cambio="1.1">Dólar</option>
+            <option  class="colorcampostxt" value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
+            <option  class="colorcampostxt" value="yen" data-tasa-cambio="160">Yen Japonés</option>
+            <option  class="colorcampostxt" value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
         </select>
     </div>
 
     <div class="mb-3">
         <label for="monedaDestino" class="form-label">Selecciona la moneda de destino:</label>
         <select class="form-select" name="monedaDestino" id="monedaDestino" required>
-            <option value="euro" data-tasa-cambio="1">Euro</option>
-            <option value="dolar" data-tasa-cambio="1.1">Dólar</option>
-            <option value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
-            <option value="yen" data-tasa-cambio="160">Yen Japonés</option>
-            <option value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
+            <option  class="colorcampostxt" value="euro" data-tasa-cambio="1">Euro</option>
+            <option  class="colorcampostxt" value="dolar" data-tasa-cambio="1.1">Dólar</option>
+            <option  class="colorcampostxt" value="libra" data-tasa-cambio="0.9">Libra Esterlina</option>
+            <option  class="colorcampostxt" value="yen" data-tasa-cambio="160">Yen Japonés</option>
+            <option  class="colorcampostxt" value="rublo" data-tasa-cambio="95">Rublo Ruso</option>
         </select>
     </div>
 
@@ -101,7 +98,7 @@
    <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
-  <div class="text-center p-4">
+  <div class="text-center p-4 colorfooter">
     <p>DisBank@Copyright</p>
   </div>
   <!-- Copyright -->

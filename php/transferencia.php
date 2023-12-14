@@ -23,7 +23,7 @@
 </head>
 
 <body><header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light colorHeader">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +53,7 @@
           <a class="nav-link active" aria-current="page" href="chat.php">Chat</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+     
     </div>
   </div>
 </nav>
@@ -69,21 +66,21 @@
                     <img src="../img/icontransferencia.png" class="img-fluid rounded-top" alt="">
                     <p>Seleccione el tipo de movimiento (ingreso o gasto) y la cantidad que desee mover.</p>
 
-                    <form action="enviar_transferencia.php" method="post">
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" name="cantidad" required>
+                    <form class="colorforms" action="enviar_transferencia.php" method="post">
+        <label  for="cantidad">Cantidad:</label>
+        <input class="colorcampostxt" type="number" name="cantidad" required>
 
         <br>
 
         <label for="movimiento">Tipo de Operación:</label>
-        <select name="movimiento" required>
-            <option value="ingreso">Ingreso</option>
-            <option value="gasto">Gasto</option>
+        <select  class="colorcampostxt" name="movimiento" required>
+            <option class="colorcampostxt" value="ingreso">Ingreso</option>
+            <option  class="colorcampostxt" value="gasto">Gasto</option>
         </select>
 
         <br>
 
-        <input type="submit" value="Realizar Operación">
+        <input class="colorcampostxt" type="submit" value="Realizar Operación">
     </form>
                 </div>
             </div>
@@ -92,7 +89,7 @@
     <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
-  <div class="text-center p-4">
+  <div class="text-center p-4 colorfooter">
     <p>DisBank@Copyright</p>
   </div>
   <!-- Copyright -->

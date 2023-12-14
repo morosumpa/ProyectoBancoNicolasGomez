@@ -23,7 +23,7 @@
 </head>
 
 <body><header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light colorHeader">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +53,7 @@
           <a class="nav-link active" aria-current="page" href="chat.php">Chat</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      
     </div>
   </div>
 </nav>
@@ -69,14 +66,14 @@
         <img src="../img/iconprestamo.png" class="img-fluid rounded-top" alt="">
         <p>Introduzca el motivo por el que esta pidiendo un préstamo y la cantidad de este.</p>
 
-        <form action="enviar_prestamo.php" method="post">
+        <form class="colorforms" action="enviar_prestamo.php" method="post">
         <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" required>
+        <input class="colorcampostxt" type="text" id="descripcion" name="descripcion" required>
 
         <label for="cantidad">Cantidad:</label>
-        <input type="text" id="cantidad" name="cantidad" required>
+        <input class="colorcampostxt" type="text" id="cantidad" name="cantidad" required>
 
-        <input type="submit" value="Enviar">
+        <input class="colorcampostxt" type="submit" value="Enviar">
     </form>
     </div>
 </div>
@@ -87,7 +84,7 @@
   <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
-  <div class="text-center p-4">
+  <div class="text-center p-4 colorfooter">
     <p>DisBank@Copyright</p>
   </div>
   <!-- Copyright -->

@@ -21,23 +21,34 @@
   <script defer src="../assets/js/web.js"></script>
 </head>
 <body>
+  <div class="container">
     <h2>Registro de Cuenta</h2>
 
-    <form action="generarIban.php" method="post">
+    <form class="colorforms"action="generarIban.php" method="post">
         <label for="saldo">Saldo Inicial:</label>
-        <input type="number" name="saldo" required>
+        <input class="colorcampostxt" type="number" name="saldo" required>
 
         <br>
 
-        <label for="tipo_cuenta">Tipo de Cuenta:</label>
-        <select name="tipo_cuenta" required>
-            <option value="CuentaCorriente">Cuenta Corriente</option>
-            <option value="CuentaAhorro">Cuenta ahorro</option>
+        <label  class="colorcampostxt" for="tipo_cuenta">Tipo de Cuenta:</label>
+        <select  class="colorcampostxt" name="tipo_cuenta" required>
+            <option  class="colorcampostxt" value="CuentaCorriente">Cuenta Corriente</option>
+            <option  class="colorcampostxt" value="CuentaAhorro">Cuenta ahorro</option>
         </select>
 
         <br>
 
-        <input type="submit" value="Registrar Cuenta">
+        <input  class="colorcampostxt" type="submit" value="Registrar Cuenta">
     </form>
+    </div>
+     <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Copyright -->
+  <div class="text-center p-4 colorfooter">
+    <p>DisBank@Copyright</p>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </body>
 </html>

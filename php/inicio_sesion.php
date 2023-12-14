@@ -27,14 +27,14 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <form action="verificacion.php" method="post">
+  <form class="colorforms"action="verificacion.php" method="post">
   <label for="campo1">DNI:</label>
-        <input type="text" id="campo1" name="campo1" required>
+        <input  class="colorcampostxt" type="text" id="campo1" name="campo1" required>
 
         <label for="campo12">Contraseña:</label>
-        <input type="text" id="campo12" name="campo12" required>
+        <input  class="colorcampostxt" type="text" id="campo12" name="campo12" required>
 
-        <input type="submit" value="Enviar">
+        <input  class="colorcampostxt" type="submit" value="Enviar">
     </form>
     <p>¿No tienes cuenta? <a href="registro.php"><u>pulse aqui</u></a> para registrarte</p>
   </main>
