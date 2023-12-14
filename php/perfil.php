@@ -159,24 +159,34 @@ $conn->close();
             <h1>Perfil del Usuario</h1>
 
             <!-- Mostrar información del Usuario -->
+            <div class="tablapar">
             <h2>Información del Usuario</h2>
             <pre><?php print_r($usuario); ?></pre>
+            </div>
 
             <!-- Mostrar información de la Cuenta -->
+            <div class="tablaimpar">
             <h2>Información de la Cuenta</h2>
             <pre><?php print_r($cuenta); ?></pre>
+            </div>
 
             <!-- Mostrar información de los Movimientos -->
+            <div class="tablapar">
             <h2>Movimientos</h2>
             <pre><?php print_r($movimientos); ?></pre>
+            </div>
 
             <!-- Mostrar información del CambioMoneda -->
+            <div class="tablaimpar">
             <h2>Cambio de Moneda</h2>
             <pre><?php print_r($cambio_moneda); ?></pre>
+            </div>
 
             <!-- Mostrar información de los Prestamos -->
+            <div class="tablapar">
             <h2>Préstamos</h2>
             <pre><?php print_r($prestamos); ?></pre>
+            </div>
         </div>
     </main>
     <!-- Footer -->

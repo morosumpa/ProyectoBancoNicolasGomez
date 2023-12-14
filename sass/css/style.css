@@ -58,3 +58,17 @@ body {
   background-color: #A4C3B2;
   color: #020202;
 }
+
+.tablapar tr:nth-child(odd) {
+  background-color: #2da46e;
+}
+.tablapar tr:nth-child(even) {
+  background-color: #2f5b45;
+}
+
+.tablaimpar tr:nth-child(odd) {
+  background-color: #2da46e;
+}
+.tablaimpar tr:nth-child(even) {
+  background-color: #2f5b45;
+}

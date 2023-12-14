@@ -1,0 +1,22 @@
+// Definir colores
+$verde1: #2da46e; 
+$verde2: #2f5b45; 
+$txt1: #020202; 
+$txt2: #A4C3B2;
+// Mixin para alternar colores en tablas impares y pares
+@mixin alternar-colores($color1, $color2) {
+  tr:nth-child(odd) {
+    background-color: $color1;
+  }
+  tr:nth-child(even) {
+    background-color: $color2;
+  }
+}
+
+.tablapar {
+  @include alternar-colores($verde1, $verde2);
+}
+
+.tablaimpar {
+  @include alternar-colores($verde1, $verde2);
+}
