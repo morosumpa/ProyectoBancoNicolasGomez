@@ -1,5 +1,21 @@
-$bgcolorfooter:#2B6C4C;
-
-.colorfooter{
-background-color:$bgcolorfooter;
-}
+// Mixin para el footer
+@mixin estilo-footer($bgcolor, $text-color: #020202, $padding: 10px) {
+    background-color: $bgcolor;
+    color: $text-color; 
+    padding: $padding; 
+  }
+  
+  // Variables
+  $bgcolorfooter-estandar: #2B6C4C;
+  $bgcolorfooter-admin: #348f61;
+  
+  // Uso del mixin para el footer estándar
+  .footerestandar {
+    @include estilo-footer($bgcolorfooter-estandar);
+  }
+  
+  // Uso del mixin para el footer de admin
+  .footeradmin {
+    @include estilo-footer($bgcolorfooter-admin);
+  }
+  

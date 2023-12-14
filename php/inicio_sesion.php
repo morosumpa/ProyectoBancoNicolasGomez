@@ -41,7 +41,7 @@
   <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
-  <div class="text-center p-4">
+  <div class="text-center p-4 footerestandar">
     <p>DisBank@Copyright</p>
   </div>
   <!-- Copyright -->

@@ -18,8 +18,16 @@ nav ul li a {
   color: #020202;
 }
 
-.colorfooter {
+.footerestandar {
   background-color: #2B6C4C;
+  color: #020202;
+  padding: 10px;
+}
+
+.footeradmin {
+  background-color: #348f61;
+  color: #020202;
+  padding: 10px;
 }
 
 .colorforms {
@@ -37,8 +45,8 @@ body {
 }
 
 .botonbase, .botonadm, .botonforms {
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px;
+  font-size: 14px;
 }
 
 .botonforms {

@@ -182,7 +182,7 @@ $conn->close();
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
   <!-- Copyright -->
-  <div class="text-center p-4 colorfooter">
+  <div class="text-center p-4 footerestandar">
     <p>DisBank@Copyright</p>
   </div>
   <!-- Copyright -->

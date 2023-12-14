@@ -1,9 +1,15 @@
-
-.botonbase {
-    padding: 10px;
-    font-size: 16px;
+// Mixin para estilos comunes de botón
+@mixin boton-base($padding: 10px, $font-size: 16px) {
+    padding: $padding;
+    font-size: $font-size;
   }
   
+  // Extendimiento para botón base
+  .botonbase {
+    @include boton-base(12px, 14px);
+  }
+  
+  // Extendimientos específicos para diferentes botones
   .botonforms {
     @extend .botonbase;
     background-color: #A4C3B2;
